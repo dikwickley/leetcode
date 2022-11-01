@@ -21,14 +21,10 @@ public:
             b.push_back(l2->val);
             l2 = l2->next;
         }
-        // reverse(a.begin(), a.end());
-        // reverse(b.begin(), b.end());
+        
         vector<int> c;
         int i=0;
         int carry = 0;
-        
-        // for(int i=0;i<a.size();i++) cout<<a[i]<<" ";
-        // for(int i=0;i<b.size();i++) cout<<b[i]<<" ";
         
         while(i < a.size() && i < b.size()){
             c.push_back((a[i]+b[i]+carry)%10);
@@ -54,10 +50,7 @@ public:
             c.push_back(carry);
         }
         
-        // for(int i=0;i<c.size();i++) cout<<c[i]<<" ";
-        
-        // ListNode h = new ListNode(c[0], NULL);
-        
+                
         ListNode* head = new ListNode();
         head -> val = c[c.size()-1];
         head -> next = NULL;
