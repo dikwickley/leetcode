@@ -1,11 +1,12 @@
 class Solution {
 public:
 
-    
-  int minMutation(string start, string end, vector<string>& bank) {
+ 
+
+int minMutation(string start, string end, vector<string>& bank) {
 	int n = start.size();
-	queue <pair<string, int>> q;
-	q.push({start, 0});
+	vector <pair<string, int>> q;
+	q.push_back({start, 0});
 
 	set<string> visited;
 	set<string> nodes(bank.begin(), bank.end());
@@ -13,11 +14,12 @@ public:
 
 	if (nodes.count(end) == 0) return -1;
 
+	int i = 0;
 
-	while (!q.empty()) {
+	while (i < q.size()) {
 
-		pair<string, int> top = q.front();
-		q.pop();
+		pair<string, int> top = q[i];
+		i++;
 
 		if (top.first == end) {
 			return top.second;
@@ -29,7 +31,7 @@ public:
 				if (temp[i] != t[j]) {
 					temp[i] = t[j];
 					if (nodes.count(temp) != 0 && visited.count(temp) == 0) {
-						q.push({temp, top.second + 1});
+						q.push_back({temp, top.second + 1});
 
 					}
 
