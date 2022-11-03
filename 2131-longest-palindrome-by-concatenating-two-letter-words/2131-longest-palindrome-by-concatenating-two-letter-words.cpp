@@ -2,9 +2,9 @@ class Solution {
 public:
     int longestPalindrome(vector<string>& words) {
         int n = words.size();
-        map<string, int> m;
+        unordered_map<string, int> m;
         
-        map<string, int> same;
+        unordered_map<string, int> same;
         
         for(int i=0;i<n;i++){
             if(words[i][0]!=words[i][1]){
