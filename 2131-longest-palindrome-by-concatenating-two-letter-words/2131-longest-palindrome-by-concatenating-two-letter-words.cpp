@@ -34,20 +34,14 @@ public:
             }
                 
         }
-        cout<<"\n";
-        cout<<"matches "<<matches<<"\n";
         
         bool flag = false;
         
-        for (auto i : same)
-        cout << i.first << "   " << i.second<< "\n";
                
         for(auto i: same){
             if(i.second%2==1) flag = true;
             matches += (i.second/2);
         }
-        
-        cout<<"matches "<<matches;
         
         int ans = matches*4;
         
