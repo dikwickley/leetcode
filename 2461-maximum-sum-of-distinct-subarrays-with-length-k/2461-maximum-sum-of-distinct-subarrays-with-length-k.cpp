@@ -2,7 +2,7 @@ class Solution {
 public:
     long long maximumSubarraySum(vector<int>& nums, int k) {
         set<int> s;
-        map<int,int> m;
+        unordered_map<int,int> m;
         for(int i=0;i<k;i++) {
             s.insert(nums[i]);
             if(m.count(nums[i])==0) m.insert({nums[i],1});
@@ -27,7 +27,6 @@ public:
         
         for(int i=k;i<n;i++){
             
-            // cout<<m[nums[left]]<<"\n";           
 
             s.erase(nums[left]);
             m[nums[left]] -= 1;
@@ -40,7 +39,6 @@ public:
             if(m.count(nums[right])==0) m.insert({nums[right],1});
             else m[nums[right]] +=1;
             
-            // cout<<"size"<<s.size()<<"\n";
             if(s.size()==k){
                 cout<<right<<" "<<left<<"\n";
                 sum = max(sum, (prefix[right]-prefix[left-1]));
