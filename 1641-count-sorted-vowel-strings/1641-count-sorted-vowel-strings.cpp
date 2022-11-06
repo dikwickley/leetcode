@@ -3,6 +3,16 @@ public:
     
     int arr[5][51] = {0};
     
+    Solution(){
+        int n= 50;
+        int ans = rec(n, 'a')  + 
+                rec(n, 'e') +
+                rec(n, 'i') +
+                rec(n, 'o') +
+                rec(n, 'u');
+    }
+    
+    
     int rec(int n, char c){
         if(n==2){
             if(c=='a') return 5;
@@ -65,11 +75,14 @@ public:
     int countVowelStrings(int n) {
     
         if(n==1) return 5;
+        if(n==2) return 15;
         
-        return rec(n, 'a')  + 
-                rec(n, 'e') +
-                rec(n, 'i') +
-                rec(n, 'o') +
-                rec(n, 'u');
+        return arr[0][n]+arr[1][n]+arr[2][n]+arr[3][n]+arr[4][n];
+        
+        // return rec(n, 'a')  + 
+        //         rec(n, 'e') +
+        //         rec(n, 'i') +
+        //         rec(n, 'o') +
+        //         rec(n, 'u');
     }
 };
