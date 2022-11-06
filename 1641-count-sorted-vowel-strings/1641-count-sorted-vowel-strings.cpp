@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    int arr[5][50] = {0};
+    int arr[5][51] = {0};
     
     int rec(int n, char c){
         if(n==2){
@@ -10,6 +10,21 @@ public:
             if(c=='i') return 3;
             if(c=='o') return 2;
             if(c=='u') return 1;
+        }
+        
+        
+        int i = 0;
+        switch(c){
+            case 'a' : i=0; break;
+            case 'e' : i=1; break;
+            case 'i' : i=2; break;
+            case 'o' : i=3; break;
+            case 'u' : i=4; break;    
+        }
+        
+        if(arr[i][n]!=0){
+            // cout<<i<<" "<<n<<"\n";
+            return arr[i][n];
         }
         
         int ans = 0;
@@ -38,6 +53,9 @@ public:
         
         if(c=='u')
                 ans = rec(n-1, 'u');
+        
+        
+        arr[i][n] = ans;
         
         return ans;
         
