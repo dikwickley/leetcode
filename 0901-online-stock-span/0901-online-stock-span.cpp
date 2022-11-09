@@ -1,6 +1,6 @@
 class StockSpanner {
 public:
-    vector<int> stock;
+    
     stack<pair<int,int>> s;
     StockSpanner() {
         
@@ -18,13 +18,7 @@ public:
         
         s.push({price, count});
         
-//         stack<pair<int,int>> temp =s;
-        
-//         while(!temp.empty()){
-//             cout<<"("<<temp.top().first<<","<<temp.top().second<<") "; temp.pop();
-//         }
-//         cout<<"\n";
-        
+
         return count;
     }
 };
