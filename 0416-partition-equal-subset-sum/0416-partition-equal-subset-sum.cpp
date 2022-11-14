@@ -12,7 +12,7 @@ public:
         dp[i][sumA] =  rec(nums,i+1, sumA+nums[i], total, dp) || rec(nums,i+1, sumA, total, dp);
         return dp[i][sumA];
     }
-    
+    //memoization
     bool canPartition(vector<int>& nums) {
         int n = nums.size();
         int total = 0;
@@ -20,4 +20,8 @@ public:
         for(int i=0;i<n;i++) total+=nums[i];
         return rec(nums, 0, 0, total,dp);
     }
+//         bool canPartition(vector<int>& nums) {
+            
+//         }
+    
 };
