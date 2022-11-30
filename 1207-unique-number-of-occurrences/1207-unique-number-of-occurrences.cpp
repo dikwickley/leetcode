@@ -2,12 +2,12 @@ class Solution {
 public:
     bool uniqueOccurrences(vector<int>& arr) {
         int n = arr.size();
-        vector<int> m(2500, 0);
+        vector<int> m(2002, 0);
         
         for(int i=0;i<n;i++){
             m[1001+arr[i]] += 1;
         }
-        vector<int> m2(2500, 0);
+        vector<int> m2(1001, 0);
         
         
         for(int i=0;i<m.size();i++){
