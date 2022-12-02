@@ -22,17 +22,9 @@ public:
         
         
         
+        sort(map1.begin(), map1.end());
+        sort(map2.begin(), map2.end());
         
-        vector<int> freq1;
-        vector<int> freq2;
-        
-        for(auto i: map1) if(i!=0) freq1.push_back(i);
-        
-        for(auto i: map2) if(i!=0) freq2.push_back(i);
-        
-        sort(freq1.begin(), freq1.end());
-        sort(freq2.begin(), freq2.end());
-        
-        return freq1==freq2;
+        return map1==map2;
     }
 };
